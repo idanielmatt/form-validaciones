@@ -1,13 +1,11 @@
 <?php
-$host = "localhost";
+$host = "127.0.0.1:3000";
 $user = "root";
-$pass = "";
+$pass = "danielMyAdmin23";
 $db = "d7";
 
 $conexion = new mysqli($host, $user, $pass, $db);
-if ($conexion->connect_error) {
-	die("Error de conexion". $conexion->connect_error);
-} else {
-	echo "";
-}
+if ($conexion->connect_errno) {
+	echo "falló conexion MYSQL: (" . $conexion->connect_errno .")" . $conexion->connect_error;
+} return $conexion;
 ?>
